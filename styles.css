@@ -506,6 +506,60 @@ body {
     .nav-links {
         display: none;
     }
+
+    .navbar .container {
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--background);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--text-color);
+        cursor: pointer;
+        margin-right: 1rem;
+    }
+
+    .theme-toggle {
+        position: relative;
+        margin: 0;
+        order: 2;
+    }
+
+    .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .mobile-menu-btn {
+        order: 3;
+    }
 }
 
 /* Animation */
@@ -703,9 +757,7 @@ body {
 
 /* Dark Mode Toggle Button */
 .theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
+    position: relative;
     background: var(--background);
     border: 2px solid var(--primary-color);
     color: var(--text-color);
@@ -718,6 +770,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 1000;
+    margin-left: 1rem;
 }
 
 .theme-toggle:hover {

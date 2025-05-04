@@ -38,6 +38,9 @@ const createMobileMenu = () => {
             
             mobileMenuBtn.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
             });
             
             navbar.appendChild(mobileMenuBtn);
@@ -132,10 +135,11 @@ revealOnScroll();
 
 // Dark Mode Toggle
 const createThemeToggle = () => {
+    const navbar = document.querySelector('.navbar .container');
     const themeToggle = document.createElement('button');
     themeToggle.className = 'theme-toggle';
     themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    document.body.appendChild(themeToggle);
+    navbar.appendChild(themeToggle);
 
     // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme');
